@@ -1,33 +1,44 @@
-# 🔎 Secret Leak Finder
+# 🔐 Secret Leak Finder 🔎
 
 ## Problem
-CI pipelines often run without basic security checks.
+
+CI pipelines often run without basic security checks, allowing secrets to leak into repositories undetected.
 
 ## Solution
-This tool scans repositories for common DevSecOps issues before deployment.
 
-Things it detects:
+A lightweight scanner that detects common secret leaks in your codebase before CI or GitHub scanners do.
 
-* API keys
-* AWS credentials
-* `.env` files
-* private keys
-* tokens in config files
+Detects:
 
-Example:
+- API keys (AWS, OpenAI, Stripe, GitHub tokens, generic key assignments)
+- `.env` files committed to the repository
+- Private keys (`.pem`, `.key`, `.p12`, `.pfx` files and key content markers)
+- Secret files with overly permissive file permissions
+- Missing `.gitignore` files
+- Debug print statements, `breakpoint()` calls, and `pdb` usage
+- Subprocess calls with `shell=True` (shell injection risk)
 
-```bash
-python main.py /path/to/your/repo
-```
-
-Output:
+## Example
 
 ```
+$ python main.py /path/to/your/repo
+
 ⚠ Possible AWS key in config/settings.py
 ⚠ .env file detected
 ✔ No private keys found
 ```
 
-Why it's important:
+## Install
 
-To catch leaks before CI or GitHub scanners do.
+```bash
+git clone https://github.com/tdiprima/Secret-Leak-Finder.git
+cd Secret-Leak-Finder
+```
+
+No external dependencies required — uses the Python standard library only.
+
+## Usage
+
+```bash
+python main.py /path/to/your/repo
+```
