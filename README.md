@@ -1,12 +1,8 @@
 # 🔐 Repo Secret Finder 🔎
 
-## Problem
-
 CI pipelines often run without basic security checks, allowing secrets to leak into repositories undetected.
 
-## Solution
-
-A lightweight scanner that detects common secret leaks in your codebase before CI or GitHub scanners do.
+**Solution:** A lightweight scanner that detects common secret leaks in your codebase before CI or GitHub scanners do.
 
 I cleaned up my whole codebase with this.
 
