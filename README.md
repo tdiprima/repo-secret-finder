@@ -18,18 +18,27 @@ Detects:
 ## Example
 
 ```
-$ python main.py /path/to/your/repo
+$ repo_sanity /path/to/your/repo
 
-⚠ Possible AWS key in config/settings.py
-⚠ .env file detected
-✔ No private keys found
+  repo-sanity 🔍
+  ────────────────────────────────────────
+
+  [OK] no .env file found
+  [OK] .gitignore exists
+  [FAIL] private key content in secrets/deploy.pem
+  [WARN] subprocess(shell=True) in scripts/run.py:12
+  [FAIL] database connection string with credentials in config/db.py:8
+
+  ────────────────────────────────────────
+  2 critical  ·  1 warnings  ·  3 ok
 ```
 
 ## Install
 
 ```bash
-git clone https://github.com/tdiprima/Secret-Leak-Finder.git
-cd Secret-Leak-Finder
+git clone https://github.com/tdiprima/repo-secret-finder.git
+cd repo-secret-finder
+pip install .
 ```
 
 No external dependencies required — uses the Python standard library only.
@@ -37,5 +46,11 @@ No external dependencies required — uses the Python standard library only.
 ## Usage
 
 ```bash
-python main.py /path/to/your/repo
+# Scan a specific repo
+repo_sanity /path/to/your/repo
+
+# Scan the current directory
+repo_sanity .
 ```
+
+<br>

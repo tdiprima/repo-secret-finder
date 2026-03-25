@@ -4,7 +4,7 @@ Check: Does the repo have a .gitignore?
 
 import os
 
-from results import Finding
+from ..results import Finding
 
 
 def check_gitignore(repo_path):

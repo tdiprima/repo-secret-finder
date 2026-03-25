@@ -4,8 +4,8 @@ Check: Are there private keys in the repo?
 
 import os
 
-from results import Finding
-from scanner import get_all_files, read_file_lines
+from ..results import Finding
+from ..scanner import get_all_files, read_file_lines
 
 # File extensions that are private keys
 KEY_FILE_EXTENSIONS = [".pem", ".key", ".p12", ".pfx"]

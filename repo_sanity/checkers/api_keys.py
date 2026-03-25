@@ -4,8 +4,8 @@ Check: Are there API key patterns in source files?
 
 import re
 
-from results import Finding
-from scanner import get_source_files, read_file_lines
+from ..results import Finding
+from ..scanner import get_source_files, read_file_lines
 
 # Patterns that scream "this is an API key"
 API_KEY_PATTERNS = [

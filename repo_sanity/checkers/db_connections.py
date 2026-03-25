@@ -4,8 +4,8 @@ Check: Are there database connection strings in source files?
 
 import re
 
-from results import Finding
-from scanner import get_source_files, read_file_lines
+from ..results import Finding
+from ..scanner import get_source_files, read_file_lines
 
 # Patterns covering common database connection string formats
 DB_CONNECTION_PATTERNS = [

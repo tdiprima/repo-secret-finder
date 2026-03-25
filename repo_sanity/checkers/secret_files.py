@@ -6,8 +6,8 @@ Check: Are secret-looking files world-readable?
 import os
 import stat
 
-from results import Finding
-from scanner import get_all_files
+from ..results import Finding
+from ..scanner import get_all_files
 
 # Files that should NOT be world-readable
 SECRET_FILENAMES = [

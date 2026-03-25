@@ -9,8 +9,8 @@ Usage:
 import sys
 import os
 
-from checkers import ALL_CHECKERS
-from printer import print_banner, print_finding, print_summary
+from .checkers import ALL_CHECKERS
+from .printer import print_banner, print_finding, print_summary
 
 
 def get_repo_path():

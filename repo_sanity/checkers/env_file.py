@@ -4,7 +4,7 @@ Check: Is a .env file sitting in the repo?
 
 import os
 
-from results import Finding
+from ..results import Finding
 
 
 def check_env_file(repo_path):

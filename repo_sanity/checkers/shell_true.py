@@ -5,8 +5,8 @@ Check: Is anyone using subprocess with shell=True?
 
 import re
 
-from results import Finding
-from scanner import get_source_files, read_file_lines
+from ..results import Finding
+from ..scanner import get_source_files, read_file_lines
 
 # Patterns that match shell=True in subprocess calls
 SHELL_TRUE_PATTERN = re.compile(

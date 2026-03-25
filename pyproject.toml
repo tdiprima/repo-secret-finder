@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "repo-sanity"
 version = "0.1.0"
@@ -5,3 +9,9 @@ description = "Check repos for dumb mistakes"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = []
+
+[project.scripts]
+repo_sanity = "repo_sanity.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["repo_sanity*"]
